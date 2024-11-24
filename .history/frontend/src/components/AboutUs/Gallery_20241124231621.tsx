@@ -69,7 +69,7 @@ export default function Gallery() {
               &larr;
             </button>
             <button
-              className="absolute top-1/2 -right-16 transform -translate-y-1/2 bg-white hover:bg-darkorange hover:text-white text-black rounded-full p-2"
+              className="absolute top-1/2 -right-2 transform -translate-y-1/2 bg-white hover:bg-darkorange hover:text-white text-black rounded-full p-2"
               onClick={goToNextImage}
             >
               &rarr;

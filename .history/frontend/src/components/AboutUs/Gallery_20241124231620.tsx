@@ -63,13 +63,13 @@ export default function Gallery() {
           <div className="relative w-11/12 md:w-3/4 lg:w-1/2" onClick={(e) => e.stopPropagation()}>
             <img src={images[currentIndex]} alt="Current" className="w-full h-auto" />
             <button
-              className="absolute top-1/2 -left-16 transform -translate-y-1/2 bg-white  hover:bg-darkorange hover:text-white text-black rounded-full p-2"
+              className="absolute top-1/2 -left-1 transform -translate-y-1/2 bg-white  hover:bg-darkorange hover:text-white text-black rounded-full p-2"
               onClick={goToPreviousImage}
             >
               &larr;
             </button>
             <button
-              className="absolute top-1/2 -right-16 transform -translate-y-1/2 bg-white hover:bg-darkorange hover:text-white text-black rounded-full p-2"
+              className="absolute top-1/2 -right-2 transform -translate-y-1/2 bg-white hover:bg-darkorange hover:text-white text-black rounded-full p-2"
               onClick={goToNextImage}
             >
               &rarr;
