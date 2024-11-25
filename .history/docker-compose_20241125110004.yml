@@ -1,0 +1,49 @@
+version: '3.8'
+
+services:
+  # Frontend Service
+  frontend:
+    build:
+      context: ./frontend
+    container_name: frontend_container
+    ports:
+      - "5173:5173"  # Vite default port
+    volumes:
+      - ./frontend:/app
+    environment:
+      VITE_BACKEND_URL: "http://backend:5000"  # Backend URL
+    depends_on:
+      - backend
+
+  # Backend Service
+  backend:
+    build:
+      context: ./backend
+    container_name: backend_container
+    ports:
+      - "5000:5000"  # Backend API port
+    volumes:
+      - ./backend:/app
+    environment:
+      MYSQL_HOST: "mysql"  # Database service name
+      MYSQL_USER: "root"
+      MYSQL_PASSWORD: ""  # Set your password here
+      MYSQL_DATABASE: "greatnepalholidays"  # Database name
+    depends_on:
+      - mysql
+
+  # MySQL Database Service
+  mysql:
+    image: mysql:8
+    container_name: mysql_container
+    environment:
+      MYSQL_ROOT_PASSWORD: ""  # Set root password for MySQL
+      MYSQL_DATABASE: "greatnepalholidays"  # Database to be created
+    ports:
+      - "3306:3306"  # MySQL port
+    volumes:
+      - mysql_data:/var/lib/mysql  # Persist data between container restarts
+
+# Volumes to persist MySQL data
+volumes:
+  mysql_data:
