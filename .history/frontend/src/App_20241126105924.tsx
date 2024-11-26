@@ -4,7 +4,6 @@ import Home from "./components/Home/Home";
 // import About from "./components/About/About"; // Example of another page
 import Footer from "./components/Footer/Footer"; // Assuming you have a Footer component
 import P from './P';
-import Contactform from './components/Contact/Contactform';
 
 export default function App() {
   return (
@@ -13,7 +12,7 @@ export default function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/p" element={<P />} />
-        <Route path="/contact" element={<Contactform />} />
+        <Route path="/p" element={<P />} />
       </Routes>
       <Footer />
     </Router>
