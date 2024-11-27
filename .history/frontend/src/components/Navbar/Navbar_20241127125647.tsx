@@ -1,33 +1,13 @@
 import { Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
-import axios from 'axios';
 import { FaPhone, FaEnvelope } from 'react-icons/fa';
 import logo1 from '../../assets/logo1.png';
 import logo2 from '../../assets/logo2.png';
 
-
-interface Activity {
-    id: number;
-    activity: string;
-}
-
 export default function Navbar() {
-    const [activities, setActivities] = useState<Activity[]>([]);
-
-    useEffect(() => {
-        // Fetch the activities from the backend
-        axios.get<Activity[]>('http://localhost:5000/api/activities')
-            .then(response => {
-                setActivities(response.data);
-            })
-            .catch(error => {
-                console.error('There was an error fetching the activities!', error);
-            });
-    }, []);
-
     const [isScrolled, setIsScrolled] = useState(false);
     const [isDropdownVisible, setIsDropdownVisible] = useState(false);
-    const [timeoutId, setTimeoutId] = useState<number | null>(null);
+    const [timeoutId, setTimeoutId] = useState(null);
 
     // Detect scroll and update navbar background and position
     useEffect(() => {
@@ -46,14 +26,6 @@ export default function Navbar() {
             window.removeEventListener('scroll', handleScroll);
         };
     }, []);
-
-    const handleMouseEnter = () => {
-        // Clear any existing timeout to prevent multiple delays
-        if (timeoutId) {
-            clearTimeout(timeoutId);
-        }
-        setIsDropdownVisible(true); // Show dropdown immediately
-    };
 
     const handleMouseLeave = () => {
         // Set a timeout to hide the dropdown after 0.5 seconds
@@ -116,16 +88,14 @@ export default function Navbar() {
                             <Link to="#" className="hover:text-darkorange">Activities</Link>
                             {isDropdownVisible && (
                                 <div
-                                    className="absolute left-0 mt-2 bg-white text-black shadow-md rounded-md px-2 py-5 w-auto z-30"
+                                    className="absolute left-0 mt-2 bg-white text-black shadow-md rounded-md w-40"
                                     onMouseEnter={handleListMouseEnter}  // Keep visible while hovering over the list
                                     onMouseLeave={handleListMouseLeave}  // Hide after 0.5 seconds when mouse leaves the list
                                 >
                                     <ul>
-                                        {activities.map((activity, id) => (
-                                            <li key={id} className="hover:bg-gray-200">
-                                                <Link to={`/activity/${activity.id}`}>{activity.activity}</Link>
-                                            </li>
-                                        ))}
+                                        <li className="hover:bg-gray-200"><Link to="/activity1" className="block px-4 py-2">Activity 1</Link></li>
+                                        <li className="hover:bg-gray-200"><Link to="/activity2" className="block px-4 py-2">Activity 2</Link></li>
+                                        <li className="hover:bg-gray-200"><Link to="/activity3" className="block px-4 py-2">Activity 3</Link></li>
                                     </ul>
                                 </div>
                             )}

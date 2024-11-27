@@ -116,11 +116,11 @@ export default function Navbar() {
                             <Link to="#" className="hover:text-darkorange">Activities</Link>
                             {isDropdownVisible && (
                                 <div
-                                    className="absolute left-0 mt-2 bg-white text-black shadow-md rounded-md px-2 py-5 w-auto z-30"
+                                    className="absolute left-0 mt-2 bg-white text-black shadow-md rounded-md w-40 z-30"
                                     onMouseEnter={handleListMouseEnter}  // Keep visible while hovering over the list
                                     onMouseLeave={handleListMouseLeave}  // Hide after 0.5 seconds when mouse leaves the list
                                 >
-                                    <ul>
+                                    <ul >
                                         {activities.map((activity, id) => (
                                             <li key={id} className="hover:bg-gray-200">
                                                 <Link to={`/activity/${activity.id}`}>{activity.activity}</Link>
