@@ -80,35 +80,35 @@ const AddActivity = () => {
                     placeholder="Place"
                     value={place}
                     onChange={e => setPlace(e.target.value)}
-                    className="w-full p-3 mb-4 border border-gray-300 rounded-lg text-lg focus:outline-none focus:ring-2 focus:ring-darkorange"
+                    className="w-full p-3 mb-4 border border-gray-300 rounded-lg text-lg focus:outline-none focus:ring-2 focus:ring-"
                 />
                 <input
                     type="number"
                     placeholder="Price"
                     value={price}
                     onChange={e => setPrice(e.target.value)}
-                    className="w-full p-3 mb-4 border border-gray-300 rounded-lg text-lg focus:outline-none focus:ring-2 focus:ring-darkorange"
+                    className="w-full p-3 mb-4 border border-gray-300 rounded-lg text-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
                 />
                 <input
                     type="text"
                     placeholder="Country"
                     value={country}
                     onChange={e => setCountry(e.target.value)}
-                    className="w-full p-3 mb-4 border border-gray-300 rounded-lg text-lg focus:outline-none focus:ring-2 focus:ring-darkorange"
+                    className="w-full p-3 mb-4 border border-gray-300 rounded-lg text-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
                 />
                 <input
                     type="text"
                     placeholder="Duration"
                     value={duration}
                     onChange={e => setDuration(e.target.value)}
-                    className="w-full p-3 mb-4 border border-gray-300 rounded-lg text-lg focus:outline-none focus:ring-2 focus:ring-darkorange"
+                    className="w-full p-3 mb-4 border border-gray-300 rounded-lg text-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
                 />
                 <input
                     type="text"
                     placeholder="Image URL"
                     value={imageurl}
                     onChange={e => setImageurl(e.target.value)}
-                    className="w-full p-3 mb-4 border border-gray-300 rounded-lg text-lg focus:outline-none focus:ring-2 focus:ring-darkorange"
+                    className="w-full p-3 mb-4 border border-gray-300 rounded-lg text-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
                 />
                 <div className="border border-gray-300 rounded-lg shadow-md mb-4">
                     <CKEditor

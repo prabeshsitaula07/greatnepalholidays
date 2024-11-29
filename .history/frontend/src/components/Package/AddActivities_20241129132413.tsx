@@ -110,7 +110,7 @@ const AddActivity = () => {
                     onChange={e => setImageurl(e.target.value)}
                     className="w-full p-3 mb-4 border border-gray-300 rounded-lg text-lg focus:outline-none focus:ring-2 focus:ring-darkorange"
                 />
-                <div className="border border-gray-300 rounded-lg shadow-md mb-4">
+                <div className="border border-gray-300 rounded-lg shadow-md mb-4 focus:">
                     <CKEditor
                         editor={ClassicEditor}
                         config={{

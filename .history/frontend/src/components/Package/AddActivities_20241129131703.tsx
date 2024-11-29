@@ -64,53 +64,51 @@ const AddActivity = () => {
 
     return (
         <div>
-            <h1 className="text-4xl tracking-tight text-center pt-10 font-extrabold text-gray-900 dark:text-black">
-                Add Activity
-            </h1>
+            <h1>Add Activity</h1>
             <form onSubmit={handleSubmit} className="px-5 py-10 md:px-24">
                 <input
                     type="text"
                     placeholder="Activity Name"
                     value={activity}
                     onChange={e => setActivity(e.target.value)}
-                    className="w-full p-3 mb-4 border border-gray-300 rounded-lg text-lg focus:outline-none focus:ring-2 focus:ring-darkorange"
+                    className="w-full p-3 mb-4 border border-gray-300 rounded-lg text-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
                 />
                 <input
                     type="text"
                     placeholder="Place"
                     value={place}
                     onChange={e => setPlace(e.target.value)}
-                    className="w-full p-3 mb-4 border border-gray-300 rounded-lg text-lg focus:outline-none focus:ring-2 focus:ring-darkorange"
+                    className="w-full p-3 mb-4 border border-gray-300 rounded-lg text-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
                 />
                 <input
                     type="number"
                     placeholder="Price"
                     value={price}
                     onChange={e => setPrice(e.target.value)}
-                    className="w-full p-3 mb-4 border border-gray-300 rounded-lg text-lg focus:outline-none focus:ring-2 focus:ring-darkorange"
+                    className="w-full p-3 mb-4 border border-gray-300 rounded-lg text-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
                 />
                 <input
                     type="text"
                     placeholder="Country"
                     value={country}
                     onChange={e => setCountry(e.target.value)}
-                    className="w-full p-3 mb-4 border border-gray-300 rounded-lg text-lg focus:outline-none focus:ring-2 focus:ring-darkorange"
+                    className="w-full p-3 mb-4 border border-gray-300 rounded-lg text-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
                 />
                 <input
                     type="text"
                     placeholder="Duration"
                     value={duration}
                     onChange={e => setDuration(e.target.value)}
-                    className="w-full p-3 mb-4 border border-gray-300 rounded-lg text-lg focus:outline-none focus:ring-2 focus:ring-darkorange"
+                    className="w-full p-3 mb-4 border border-gray-300 rounded-lg text-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
                 />
                 <input
                     type="text"
                     placeholder="Image URL"
                     value={imageurl}
                     onChange={e => setImageurl(e.target.value)}
-                    className="w-full p-3 mb-4 border border-gray-300 rounded-lg text-lg focus:outline-none focus:ring-2 focus:ring-darkorange"
+                    className="w-full p-3 mb-4 border border-gray-300 rounded-lg text-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
                 />
-                <div className="border border-gray-300 rounded-lg shadow-md mb-4">
+                <div className="border border-gray-300 rounded-lg shadow-md">
                     <CKEditor
                         editor={ClassicEditor}
                         config={{
@@ -141,9 +139,9 @@ const AddActivity = () => {
                         }}
                     />
                 </div>
-                <button className="inline-flex items-center text-primary bg-darkorange border border-darkorange py-1 px-3 focus:outline-none hover:bg-primary text-lg hover:text-darkorange rounded mt-4 md:mt-0" type='submit'>
-                    Add Activity
-                </button>
+                <button className="inline-flex items-center text-primary bg-darkorange border border-darkorange py-1 px-3 focus:outline-none hover:bg-primary text-lg hover:text-darkorange rounded mt-4 md:mt-0 ">
+                        Add Activity
+                    </button>
             </form>
         </div>
     );

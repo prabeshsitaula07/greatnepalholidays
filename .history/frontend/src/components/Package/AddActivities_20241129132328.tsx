@@ -108,7 +108,7 @@ const AddActivity = () => {
                     placeholder="Image URL"
                     value={imageurl}
                     onChange={e => setImageurl(e.target.value)}
-                    className="w-full p-3 mb-4 border border-gray-300 rounded-lg text-lg focus:outline-none focus:ring-2 focus:ring-darkorange"
+                    className="w-full p-3 mb-4 border border-gray-300 rounded-lg text-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
                 />
                 <div className="border border-gray-300 rounded-lg shadow-md mb-4">
                     <CKEditor
