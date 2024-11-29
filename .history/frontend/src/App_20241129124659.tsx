@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from "./components/Navbar/Navbar";
 import Home from "./components/Home/Home";
-import Footer from "./components/Footer/Footer";
+import Footer from "./components/Footer/Footer"; // Assuming you have a Footer component
 import AddActivity from './components/Package/AddActivities';
 import ActivityDetails from './components/Package/ActivityDetail';
 import NepalPackageDetail from './components/Package/NepalPackageDetail';
