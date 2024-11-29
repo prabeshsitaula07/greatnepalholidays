@@ -1,9 +1,7 @@
 import { Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
-import { FaPhone, FaEnvelope} from 'react-icons/fa';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
+import { FaPhone, FaEnvelope, FaCaretDown, yFontAwesomeIcon } from 'react-icons/fa';
 import logo1 from '../../assets/logo1.png';
 import logo2 from '../../assets/logo2.png';
 
@@ -115,7 +113,7 @@ export default function Navbar() {
                             onMouseLeave={() => handleMouseLeave('activities')}
                         >
                             <Link to="/activities" className="hover:text-darkorange">
-                                Activities <FontAwesomeIcon icon={faChevronDown} className="hover:text-darkorange"  />
+                                Activities <FontAwesomeIcon icon="fa-solid fa-chevron-down" />
                             </Link>
                             {dropdownVisibility.activities && (
                                 <div
@@ -141,7 +139,7 @@ export default function Navbar() {
                             onMouseLeave={() => handleMouseLeave('international')}
                         >
                             <Link to="/internationalpackages" className="hover:text-darkorange">
-                                International Packages <FontAwesomeIcon icon={faChevronDown} className="hover:text-darkorange"  />
+                                International Packages <FaCaretDown className="inline text-xl font-light" />
                             </Link>
                             {dropdownVisibility.international && (
                                 <div
@@ -167,7 +165,7 @@ export default function Navbar() {
                             onMouseLeave={() => handleMouseLeave('nepal')}
                         >
                             <Link to="/nepalpackages" className="hover:text-darkorange">
-                                Nepal Packages <FontAwesomeIcon icon={faChevronDown} className="hover:text-darkorange" />
+                                Nepal Packages <FaCaretDown className="inline text-xl font-light" />
                             </Link>
                             {dropdownVisibility.nepal && (
                                 <div

@@ -112,7 +112,7 @@ export default function Home() {
         {/* Content over the video */}
         <div className="relative z-10 flex items-center justify-center w-full h-full">
           <h1 className="text-white text-6xl font-bold text-center font-parkinsans absolute bottom-1/2"><span className='font-fira font-normal'>Time for your</span> <br />Next Adventure</h1>
-          <h2 className='text-white text-4xl font-normal font-fira pt-16'>Let us plan it for you</h2>
+          <h2>Let us plan it for you</h2>
         </div>
       </div>
 

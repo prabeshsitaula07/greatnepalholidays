@@ -167,7 +167,7 @@ export default function Navbar() {
                             onMouseLeave={() => handleMouseLeave('nepal')}
                         >
                             <Link to="/nepalpackages" className="hover:text-darkorange">
-                                Nepal Packages <FontAwesomeIcon icon={faChevronDown} className="hover:text-darkorange" />
+                                Nepal Packages <FontAwesomeIcon icon={faChevronDown} className="text-black hover:text-darkorange" />
                             </Link>
                             {dropdownVisibility.nepal && (
                                 <div

@@ -115,7 +115,7 @@ export default function Navbar() {
                             onMouseLeave={() => handleMouseLeave('activities')}
                         >
                             <Link to="/activities" className="hover:text-darkorange">
-                                Activities <FontAwesomeIcon icon={faChevronDown} className="hover:text-darkorange"  />
+                                Activities <FontAwesomeIcon icon={faChevronDown} className="text-white hover:text-darkorange"  />
                             </Link>
                             {dropdownVisibility.activities && (
                                 <div
@@ -141,7 +141,7 @@ export default function Navbar() {
                             onMouseLeave={() => handleMouseLeave('international')}
                         >
                             <Link to="/internationalpackages" className="hover:text-darkorange">
-                                International Packages <FontAwesomeIcon icon={faChevronDown} className="hover:text-darkorange"  />
+                                International Packages <FontAwesomeIcon icon={faChevronDown} className="text-white hover:text-darkorange"  />
                             </Link>
                             {dropdownVisibility.international && (
                                 <div
@@ -167,7 +167,7 @@ export default function Navbar() {
                             onMouseLeave={() => handleMouseLeave('nepal')}
                         >
                             <Link to="/nepalpackages" className="hover:text-darkorange">
-                                Nepal Packages <FontAwesomeIcon icon={faChevronDown} className="hover:text-darkorange" />
+                                Nepal Packages <FontAwesomeIcon icon={faChevronDown} className="text-white hover:text-darkorange" />
                             </Link>
                             {dropdownVisibility.nepal && (
                                 <div
