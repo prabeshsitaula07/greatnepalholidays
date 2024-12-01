@@ -20,7 +20,7 @@ interface InternationalPackage {
     duration: string;
 }
 
-const InternationalPackageDetail = () => {
+const InternationalPackageDetails = () => {
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [pnumber, setPnumber] = useState('');
@@ -181,4 +181,4 @@ const InternationalPackageDetail = () => {
     );
 };
 
-export default InternationalPackageDetail;
+export default ActivityDetails;

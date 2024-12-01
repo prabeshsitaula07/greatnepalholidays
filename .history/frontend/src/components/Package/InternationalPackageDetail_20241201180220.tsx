@@ -20,7 +20,7 @@ interface InternationalPackage {
     duration: string;
 }
 
-const InternationalPackageDetail = () => {
+const InternationalPackageDetails = () => {
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [pnumber, setPnumber] = useState('');
@@ -135,7 +135,7 @@ const InternationalPackageDetail = () => {
                     {/* Render description with HTML content */}
                     <div
                         className="mt-4 border p-4 w-full md:w-1/2 lg:w-[80%]"
-                        dangerouslySetInnerHTML={{ __html: internationalpackage.description }}
+                        dangerouslySetInnerHTML={{ __html: activity.description }}
                     />
 
                     <div className='md:w-1/2 lg:w-[20%] w-full pt-4'>
@@ -181,4 +181,4 @@ const InternationalPackageDetail = () => {
     );
 };
 
-export default InternationalPackageDetail;
+export default ActivityDetails;

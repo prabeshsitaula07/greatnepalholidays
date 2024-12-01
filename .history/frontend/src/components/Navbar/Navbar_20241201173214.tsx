@@ -82,7 +82,7 @@ export default function Navbar() {
 
     return (
         <>
-            <div className='w-full bg-darktheme md:gap-10 md:flex px-5 py-2 md:px-24'>
+            <div className='w-full bg-darktheme md:gap-10 flex px-5 py-2 md:px-24'>
                 <span className='text-white flex items-center'>
                     <FaPhone className="mr-2" /> 014502020, 9851064446
                 </span>

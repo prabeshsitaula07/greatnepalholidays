@@ -20,7 +20,7 @@ interface InternationalPackage {
     duration: string;
 }
 
-const InternationalPackageDetail = () => {
+const InternationalPackageDetails = () => {
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [pnumber, setPnumber] = useState('');
@@ -91,7 +91,7 @@ const InternationalPackageDetail = () => {
                 </h3>
             </div>
             <div className="container mx-auto p-5 px-5 py-10 md:px-24">
-                <h1 className="text-3xl font-bold mb-5 uppercase">{internationalpackage.package_name}</h1>
+                <h1 className="text-3xl font-bold mb-5 uppercase">{activity.activity}</h1>
                 <div className='bg-primary text-black p-4 rounded-lg shadow-sm'>
                     <h2 className='font-semibold text-xl mb-4 font-fira'>Trip Information</h2>
 
@@ -100,7 +100,7 @@ const InternationalPackageDetail = () => {
                             <FaMapMarkerAlt className='text-3xl text-darkorange' />
                             <div>
                                 <h4 className='text-lg font-medium'>Place</h4>
-                                <p className='text-sm'>{internationalpackage.place}</p>
+                                <p className='text-sm'>{activity.place}</p>
                             </div>
                         </div>
 
@@ -108,7 +108,7 @@ const InternationalPackageDetail = () => {
                             <FaDollarSign className='text-3xl text-darkorange' />
                             <div>
                                 <h4 className='text-lg font-medium'>Price</h4>
-                                <p className='text-sm'>${internationalpackage.price}</p>
+                                <p className='text-sm'>${activity.price}</p>
                             </div>
                         </div>
 
@@ -116,7 +116,7 @@ const InternationalPackageDetail = () => {
                             <FaFlag className='text-3xl text-darkorange' />
                             <div>
                                 <h4 className='text-lg font-medium'>Country</h4>
-                                <p className='text-sm'>{internationalpackage.country}</p>
+                                <p className='text-sm'>{activity.country}</p>
                             </div>
                         </div>
 
@@ -124,7 +124,7 @@ const InternationalPackageDetail = () => {
                             <FaClock className='text-3xl text-darkorange' />
                             <div>
                                 <h4 className='text-lg font-medium'>Duration</h4>
-                                <p className='text-sm'>{internationalpackage.duration}</p>
+                                <p className='text-sm'>{activity.duration}</p>
                             </div>
                         </div>
                     </div>
@@ -135,7 +135,7 @@ const InternationalPackageDetail = () => {
                     {/* Render description with HTML content */}
                     <div
                         className="mt-4 border p-4 w-full md:w-1/2 lg:w-[80%]"
-                        dangerouslySetInnerHTML={{ __html: internationalpackage.description }}
+                        dangerouslySetInnerHTML={{ __html: activity.description }}
                     />
 
                     <div className='md:w-1/2 lg:w-[20%] w-full pt-4'>
@@ -181,4 +181,4 @@ const InternationalPackageDetail = () => {
     );
 };
 
-export default InternationalPackageDetail;
+export default ActivityDetails;

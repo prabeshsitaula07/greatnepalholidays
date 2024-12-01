@@ -9,18 +9,18 @@ import { FaMapMarkerAlt, FaDollarSign, FaFlag, FaClock } from 'react-icons/fa';
 import emailjs from '@emailjs/browser';
 
 // Define the type for the activity object
-interface InternationalPackage {
+interface Activity {
     id: number;
-    package_name: string;
+    activity: string;
     place: string;
     price: number;
     country: string;
-    image_url: string;
+    imageurl: string;
     description: string; // HTML content
     duration: string;
 }
 
-const InternationalPackageDetail = () => {
+const ActivityDetails = () => {
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [pnumber, setPnumber] = useState('');
@@ -56,14 +56,14 @@ const InternationalPackageDetail = () => {
 
     // Define the type for the params to ensure type safety
     const { id } = useParams<{ id: string }>();
-    const [internationalpackage, setInternationalPackage] = useState<InternationalPackage | null>(null);
+    const [activity, setActivity] = useState<Activity | null>(null);
 
     useEffect(() => {
         // Fetch activity details from the backend
         if (id) {
-            axios.get<InternationalPackage>(`http://localhost:5000/api/internationalpackage/${id}`)
+            axios.get<Activity>(`http://localhost:5000/api/activity/${id}`)
                 .then(response => {
-                    setInternationalPackage(response.data);
+                    setActivity(response.data);
                 })
                 .catch(error => {
                     console.error('Error fetching activity details:', error);
@@ -71,7 +71,7 @@ const InternationalPackageDetail = () => {
         }
     }, [id]);
 
-    if (!internationalpackage) {
+    if (!activity) {
         return <div>Loading...</div>;
     }
 
@@ -79,19 +79,19 @@ const InternationalPackageDetail = () => {
         <div>
             <div className='relative'>
                 <img
-                    src={internationalpackage.image_url}
-                    alt={internationalpackage.package_name}
+                    src={activity.imageurl}
+                    alt={activity.activity}
                     className="w-screen max-h-[400px] object-cover"
                 />
                 <div className="absolute inset-0 bg-black bg-opacity-40"></div>
                 <h3 className='absolute bottom-10 text-white px-5 py-10 md:px-24 flex items-center gap-2'>
-                    <Link to='/internationalpackages' className='hover:text-darkorange duration-300 transition'>International Packages</Link>
+                    <Link to='/activities' className='hover:text-darkorange duration-300 transition'>Activities</Link>
                     <FontAwesomeIcon icon={faChevronRight} />
-                    {internationalpackage.package_name}
+                    {activity.activity}
                 </h3>
             </div>
             <div className="container mx-auto p-5 px-5 py-10 md:px-24">
-                <h1 className="text-3xl font-bold mb-5 uppercase">{internationalpackage.package_name}</h1>
+                <h1 className="text-3xl font-bold mb-5 uppercase">{activity.activity}</h1>
                 <div className='bg-primary text-black p-4 rounded-lg shadow-sm'>
                     <h2 className='font-semibold text-xl mb-4 font-fira'>Trip Information</h2>
 
@@ -100,7 +100,7 @@ const InternationalPackageDetail = () => {
                             <FaMapMarkerAlt className='text-3xl text-darkorange' />
                             <div>
                                 <h4 className='text-lg font-medium'>Place</h4>
-                                <p className='text-sm'>{internationalpackage.place}</p>
+                                <p className='text-sm'>{activity.place}</p>
                             </div>
                         </div>
 
@@ -108,7 +108,7 @@ const InternationalPackageDetail = () => {
                             <FaDollarSign className='text-3xl text-darkorange' />
                             <div>
                                 <h4 className='text-lg font-medium'>Price</h4>
-                                <p className='text-sm'>${internationalpackage.price}</p>
+                                <p className='text-sm'>${activity.price}</p>
                             </div>
                         </div>
 
@@ -116,7 +116,7 @@ const InternationalPackageDetail = () => {
                             <FaFlag className='text-3xl text-darkorange' />
                             <div>
                                 <h4 className='text-lg font-medium'>Country</h4>
-                                <p className='text-sm'>{internationalpackage.country}</p>
+                                <p className='text-sm'>{activity.country}</p>
                             </div>
                         </div>
 
@@ -124,7 +124,7 @@ const InternationalPackageDetail = () => {
                             <FaClock className='text-3xl text-darkorange' />
                             <div>
                                 <h4 className='text-lg font-medium'>Duration</h4>
-                                <p className='text-sm'>{internationalpackage.duration}</p>
+                                <p className='text-sm'>{activity.duration}</p>
                             </div>
                         </div>
                     </div>
@@ -135,18 +135,18 @@ const InternationalPackageDetail = () => {
                     {/* Render description with HTML content */}
                     <div
                         className="mt-4 border p-4 w-full md:w-1/2 lg:w-[80%]"
-                        dangerouslySetInnerHTML={{ __html: internationalpackage.description }}
+                        dangerouslySetInnerHTML={{ __html: activity.description }}
                     />
 
                     <div className='md:w-1/2 lg:w-[20%] w-full pt-4'>
 
                         <div className='bg-primary p-4'>
                             <h3 className='font-bold text-xl font-fira'>We love to hear from you!</h3><br />
-                            Send us your question, feedback and support here: <br /><br />
-                            <FontAwesomeIcon icon={faEnvelope} className='font-bold' /> info@greatnepalholidays.com
+                            Send us your question, feedback and support here: <br />
+                            <FontAwesomeIcon icon={faEnvelope} />
                         </div>
 
-                        <form className="bg-white flex flex-col md:ml-auto pt-4 mt-8 md:mt-0" onSubmit={handleSubmit}>
+                        <form className="bg-white flex flex-col md:ml-auto mt-8 md:mt-0" onSubmit={handleSubmit}>
                             <h2 className="text-white bg-darkorange px-4 py-2 text-lg mb-1 font-medium title-font">Quick Inquiry</h2>
                             <div className="relative mb-4">
                                 <label htmlFor="name" className="leading-7 text-sm text-gray-600">Name</label>
@@ -181,4 +181,4 @@ const InternationalPackageDetail = () => {
     );
 };
 
-export default InternationalPackageDetail;
+export default ActivityDetails;

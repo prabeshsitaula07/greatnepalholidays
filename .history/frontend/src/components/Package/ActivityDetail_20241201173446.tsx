@@ -2,7 +2,6 @@ import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import { faChevronRight } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
 import { FaMapMarkerAlt, FaDollarSign, FaFlag, FaClock } from 'react-icons/fa';
@@ -23,7 +22,7 @@ interface Activity {
 const ActivityDetails = () => {
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
-    const [pnumber, setPnumber] = useState('');
+    const [email, setEmail] = useState('');
     const [message, setMessage] = useState('');
 
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
@@ -46,7 +45,6 @@ const ActivityDetails = () => {
                 console.log('Email Sent Successfully!', response);
                 setName('');
                 setEmail('');
-                setPnumber('');
                 setMessage('');
             })
             .catch((error) => {
@@ -85,7 +83,7 @@ const ActivityDetails = () => {
                 />
                 <div className="absolute inset-0 bg-black bg-opacity-40"></div>
                 <h3 className='absolute bottom-10 text-white px-5 py-10 md:px-24 flex items-center gap-2'>
-                    <Link to='/activities' className='hover:text-darkorange duration-300 transition'>Activities</Link>
+                    <Link to='/activities'>Activities</Link>
                     <FontAwesomeIcon icon={faChevronRight} />
                     {activity.activity}
                 </h3>
@@ -131,50 +129,32 @@ const ActivityDetails = () => {
 
                 </div>
 
-                <div className='md:flex gap-2'>
-                    {/* Render description with HTML content */}
-                    <div
-                        className="mt-4 border p-4 w-full md:w-1/2 lg:w-[80%]"
-                        dangerouslySetInnerHTML={{ __html: activity.description }}
-                    />
+<div className='md:flex gap-2'>
+                {/* Render description with HTML content */}
+                <div
+                    className="mt-4 border shadow-md p-4 w-full md:w-1/2 lg:w-[80%]"
+                    dangerouslySetInnerHTML={{ __html: activity.description }}
+                />
 
-                    <div className='md:w-1/2 lg:w-[20%] w-full pt-4'>
-
-                        <div className='bg-primary p-4'>
-                            <h3 className='font-bold text-xl font-fira'>We love to hear from you!</h3><br />
-                            Send us your question, feedback and support here: <br /><br />
-                            <FontAwesomeIcon icon={faEnvelope} className='font-bold' /> info@greatnepalholidays.com
-                        </div>
-
-                        <form className="bg-white flex flex-col md:ml-auto pt-4 mt-8 md:mt-0" onSubmit={handleSubmit}>
-                            <h2 className="text-white bg-darkorange px-4 py-2 text-lg mb-1 font-medium title-font">Quick Inquiry</h2>
-                            <div className="relative mb-4">
-                                <label htmlFor="name" className="leading-7 text-sm text-gray-600">Name</label>
-                                <input type="text" id="name" name="name" className="w-full bg-white rounded border border-gray-300 focus:border-darkorange focus:ring-2 focus:ring-darkorange text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" value={name}
-                                    placeholder='Your Name: '
-                                    onChange={(e) => setName(e.target.value)} />
-                            </div>
-                            <div className="relative mb-4">
-                                <label htmlFor="email" className="leading-7 text-sm text-gray-600">Email</label>
-                                <input type="email" id="email" name="email" className="w-full bg-white rounded border border-gray-300 focus:border-darkorange focus:ring-2 focus:ring-darkorange text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" value={email}
-                                    placeholder='Your Email: '
-                                    onChange={(e) => setEmail(e.target.value)} />
-                            </div>
-                            <div className="relative mb-4">
-                                <label htmlFor="pnumber" className="leading-7 text-sm text-gray-600">Number</label>
-                                <input type="number" id="pnumber" name="pnumber" className="w-full bg-white rounded border border-gray-300 focus:border-darkorange focus:ring-2 focus:ring-darkorange text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" value={pnumber}
-                                    placeholder='Your Number: '
-                                    onChange={(e) => setPnumber(e.target.value)} />
-                            </div>
-                            <div className="relative mb-4">
-                                <label htmlFor="message" className="leading-7 text-sm text-gray-600">Message</label>
-                                <textarea id="message" name="message" className="w-full bg-white rounded border border-gray-300 focus:border-darkorange focus:ring-2 focus:ring-darkorange h-32 text-base outline-none text-gray-700 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out" value={message}
-                                    placeholder='Your Inquiry: '
-                                    onChange={(e) => setMessage(e.target.value)} ></textarea>
-                            </div>
-                            <button className="bg-darkorange border border-darkorange text-primary py-2 px-6 focus:outline-none hover:text-darkorange hover:bg-primary rounded text-lg" type="submit">Send</button>
-                        </form>
+                <form className="lg:w-[20%] md:w-1/2 bg-white flex flex-col md:ml-auto w-full md:py-8 mt-8 md:mt-0" onSubmit={handleSubmit}>
+                    <h2 className="text-white bg-darkorange px-4 py-2 text-lg mb-1 font-medium title-font">Quick Inquiry</h2>
+                    <div className="relative mb-4">
+                        <label htmlFor="name" className="leading-7 text-sm text-gray-600">Name</label>
+                        <input type="text" id="name" name="name" className="w-full bg-white rounded border border-gray-300 focus:border-darkorange focus:ring-2 focus:ring-darkorange text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" value={name}
+                            onChange={(e) => setName(e.target.value)} />
                     </div>
+                    <div className="relative mb-4">
+                        <label htmlFor="email" className="leading-7 text-sm text-gray-600">Email</label>
+                        <input type="email" id="email" name="email" className="w-full bg-white rounded border border-gray-300 focus:border-darkorange focus:ring-2 focus:ring-darkorange text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" value={email}
+                            onChange={(e) => setEmail(e.target.value)} />
+                    </div>
+                    <div className="relative mb-4">
+                        <label htmlFor="message" className="leading-7 text-sm text-gray-600">Message</label>
+                        <textarea id="message" name="message" className="w-full bg-white rounded border border-gray-300 focus:border-darkorange focus:ring-2 focus:ring-darkorange h-32 text-base outline-none text-gray-700 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out" value={message}
+                            onChange={(e) => setMessage(e.target.value)} ></textarea>
+                    </div>
+                    <button className="bg-darkorange border border-darkorange text-primary py-2 px-6 focus:outline-none hover:text-darkorange hover:bg-primary rounded text-lg" type="submit">Send</button>
+                </form>
                 </div>
             </div>
         </div>
