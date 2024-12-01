@@ -135,7 +135,7 @@ const NepalPackageDetail = () => {
                     {/* Render description with HTML content */}
                     <div
                         className="mt-4 border p-4 w-full md:w-1/2 lg:w-[80%]"
-                        dangerouslySetInnerHTML={{ __html: nepalpackage.description }}
+                        dangerouslySetInnerHTML={{ __html: internationalpackage.description }}
                     />
 
                     <div className='md:w-1/2 lg:w-[20%] w-full pt-4'>
