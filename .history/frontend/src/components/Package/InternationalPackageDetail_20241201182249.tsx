@@ -84,14 +84,11 @@ const InternationalPackageDetail = () => {
                     className="w-screen max-h-[400px] object-cover"
                 />
                 <div className="absolute inset-0 bg-black bg-opacity-40"></div>
-                <div className='absolute bottom-10 text-white px-5 md:px-24'>
-                <h1 className='text-5xl font-extrabold'>{internationalpackage.package_name}</h1>
-                <div className='flex items-center gap-2 pt-2 pb-10'>
+                <h3 className='absolute bottom-10 text-white px-5 py-10 md:px-24 flex items-center gap-2'>
                     <Link to='/internationalpackages' className='hover:text-darkorange duration-300 transition'>International Packages</Link>
                     <FontAwesomeIcon icon={faChevronRight} />
                     {internationalpackage.package_name}
-                    </div>
-                </div>
+                </h3>
             </div>
             <div className="container mx-auto p-5 px-5 py-10 md:px-24">
                 <h1 className="text-3xl font-bold text-center mb-5 uppercase font-parkinsans">{internationalpackage.package_name}</h1>

@@ -82,9 +82,9 @@ export default function Navbar() {
 
     return (
         <>
-            <div className='w-full bg-darktheme md:gap-10 md:flex px-5 py-2 md:px-24 font-parkinsans'>
+            <div className='w-full bg-darktheme md:gap-10 md:flex px-5 py-2 md:px-24'>
                 <span className='text-white flex items-center'>
-                    <FaPhone className="mr-2" />+977 9851064446 (Hunting Line)
+                    <FaPhone className="mr-2" />+977 9851064446v(Hunting Line)
                 </span>
                 <span className='text-white flex items-center'>
                     <FaEnvelope className="mr-2" /> info@greatnepalholidays.com

@@ -82,9 +82,9 @@ export default function Navbar() {
 
     return (
         <>
-            <div className='w-full bg-darktheme md:gap-10 md:flex px-5 py-2 md:px-24 font-parkinsans'>
+            <div className='w-full bg-darktheme md:gap-10 md:flex px-5 py-2 md:px-24'>
                 <span className='text-white flex items-center'>
-                    <FaPhone className="mr-2" />+977 9851064446 (Hunting Line)
+                    <FaPhone className="mr-2" /> 014502020, 9851064446
                 </span>
                 <span className='text-white flex items-center'>
                     <FaEnvelope className="mr-2" /> info@greatnepalholidays.com
@@ -92,7 +92,10 @@ export default function Navbar() {
             </div>
 
             <header
-                className={`text-black body-font w-full z-20 transition-all duration-300 ${isScrolled ? 'fixed top-0 bg-primary shadow-md' : 'bg-[#2f3c5ae8] text-white'}`}
+                className={`absolute left-0 top-full bg-primary text-black shadow-md p-4 z-30 mt-2 lg:mt-8 whitespace-nowrap w-fit 
+                    transition-all duration-300 ease-in-out transform 
+                    ${dropdownVisibility.activities ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-4'}`}
+               
             >
                 <div className="container mx-auto flex flex-wrap p-5 md:px-24 flex-col md:flex-row items-center">
                     <div className="flex title-font font-medium items-center mb-4 md:mb-0 gap-10">

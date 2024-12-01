@@ -85,11 +85,11 @@ const InternationalPackageDetail = () => {
                 />
                 <div className="absolute inset-0 bg-black bg-opacity-40"></div>
                 <div className='absolute bottom-10 text-white px-5 md:px-24'>
-                <h1 className='text-5xl font-extrabold'>{internationalpackage.package_name}</h1>
+                <h1 className='text-5xl font-extrabold'>{activity.activity}</h1>
                 <div className='flex items-center gap-2 pt-2 pb-10'>
-                    <Link to='/internationalpackages' className='hover:text-darkorange duration-300 transition'>International Packages</Link>
+                    <Link to='/activities' className='hover:text-darkorange duration-300 transition'>Activities</Link>
                     <FontAwesomeIcon icon={faChevronRight} />
-                    {internationalpackage.package_name}
+                    {activity.activity}
                     </div>
                 </div>
             </div>

@@ -113,7 +113,7 @@ export default function Footer() {
             </div>
             <div className="bg-gray-100">
                 <div className="container mx-auto py-4 px-5 md:px-24 flex flex-wrap flex-col sm:flex-row">
-                    <p className="text-gray-500 text-sm text-center sm:text-left font-bold">© 2024 Great Nepal Holidays —
+                    <p className="text-gray-500 text-sm text-center sm:text-left">© 2024 Great Nepal Holidays —
                         <Link to='https://twitter.com/knyttneve' rel="noopener noreferrer" className="text-gray-500 ml-1" target="_blank" >info@greatnepalholidays.com</Link>
                     </p>
                     <span className="text-gray-500 mx-auto md:px-24">

@@ -82,9 +82,9 @@ export default function Navbar() {
 
     return (
         <>
-            <div className='w-full bg-darktheme md:gap-10 md:flex px-5 py-2 md:px-24 font-parkinsans'>
+            <div className='w-full bg-darktheme md:gap-10 md:flex px-5 py-2 md:px-24'>
                 <span className='text-white flex items-center'>
-                    <FaPhone className="mr-2" />+977 9851064446 (Hunting Line)
+                    <FaPhone className="mr-2" /> 014502020, 9851064446
                 </span>
                 <span className='text-white flex items-center'>
                     <FaEnvelope className="mr-2" /> info@greatnepalholidays.com
@@ -115,7 +115,7 @@ export default function Navbar() {
                             onMouseLeave={() => handleMouseLeave('activities')}
                         >
                             <Link to="/activities" className="hover:text-darkorange">
-                                Activities <FontAwesomeIcon icon={faChevronDown} className="hover:text-darkorange"  />
+                                Activities <FontAwesomeIcon icon={faChevronDown} className="hover:text-darkorange font-extralight"  />
                             </Link>
                             {dropdownVisibility.activities && (
                                 <div
@@ -125,7 +125,7 @@ export default function Navbar() {
                                 >
                                     <ul>
                                         {activities.map((activity) => (
-                                            <li key={activity.id} className="hover:text-darkorange py-2 font-light">
+                                            <li key={activity.id} className="hover:text-darkorange py-1">
                                                 <Link to={`/activity/${activity.id}`}>{activity.activity}</Link>
                                             </li>
                                         ))}
@@ -151,7 +151,7 @@ export default function Navbar() {
                                 >
                                     <ul>
                                         {internationalpackages.map((internationalpackage) => (
-                                            <li key={internationalpackage.id} className="hover:text-darkorange py-2 font-light">
+                                            <li key={internationalpackage.id} className="hover:text-darkorange py-1 font-extralight">
                                                 <Link to={`/internationalpackage/${internationalpackage.id}`}>{internationalpackage.package_name}</Link>
                                             </li>
                                         ))}
@@ -167,7 +167,7 @@ export default function Navbar() {
                             onMouseLeave={() => handleMouseLeave('nepal')}
                         >
                             <Link to="/nepalpackages" className="hover:text-darkorange">
-                                Nepal Packages <FontAwesomeIcon icon={faChevronDown} className="hover:text-darkorange" />
+                                Nepal Packages <FontAwesomeIcon icon={faChevronDown} className="hover:text-darkorange " />
                             </Link>
                             {dropdownVisibility.nepal && (
                                 <div
@@ -177,7 +177,7 @@ export default function Navbar() {
                                 >
                                     <ul>
                                         {nepalpackages.map((nepalpackage) => (
-                                            <li key={nepalpackage.id} className="hover:text-darkorange py-2 font-light">
+                                            <li key={nepalpackage.id} className="hover:text-darkorange py-1">
                                                 <Link to={`/nepalpackage/${nepalpackage.id}`}>{nepalpackage.package_name}</Link>
                                             </li>
                                         ))}
