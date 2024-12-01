@@ -12,7 +12,7 @@ import emailjs from '@emailjs/browser';
 interface InternationalPackage {
     id: number;
     package_name: string;
-    destination: string;
+    place: string;
     price: number;
     country: string;
     image_url: string;
@@ -102,32 +102,32 @@ const InternationalPackageDetail = () => {
                         <div className='flex items-center space-x-3'>
                             <FaMapMarkerAlt className='text-3xl text-darkorange' />
                             <div>
-                                <h4 className='text-sm'>Destination</h4>
-                                <p className='text-lg font-medium'>{internationalpackage.destination}</p>
+                                <h4 className='text-sm'>Place</h4>
+                                <p className='text-lg font-medium'>{internationalpackage.place}</p>
                             </div>
                         </div>
 
                         <div className='flex items-center space-x-3'>
                             <FaDollarSign className='text-3xl text-darkorange' />
                             <div>
-                                <h4 className='text-sm'>Price</h4>
-                                <p className='text-lg font-medium'>${internationalpackage.price}</p>
+                                <h4 className='text-lg font-medium'>Price</h4>
+                                <p className='text-sm'>${internationalpackage.price}</p>
                             </div>
                         </div>
 
                         <div className='flex items-center space-x-3'>
                             <FaFlag className='text-3xl text-darkorange' />
                             <div>
-                                <h4 className='text-sm'>Country</h4>
-                                <p className='text-lg font-medium'>{internationalpackage.country}</p>
+                                <h4 className='text-lg font-medium'>Country</h4>
+                                <p className='text-sm'>{internationalpackage.country}</p>
                             </div>
                         </div>
 
                         <div className='flex items-center space-x-3'>
                             <FaClock className='text-3xl text-darkorange' />
                             <div>
-                                <h4 className='text-sm'>Duration</h4>
-                                <p className='text-lg font-medium'>{internationalpackage.duration}</p>
+                                <h4 className='text-lg font-medium'>Duration</h4>
+                                <p className='text-sm'>{internationalpackage.duration}</p>
                             </div>
                         </div>
                     </div>

@@ -102,8 +102,8 @@ const InternationalPackageDetail = () => {
                         <div className='flex items-center space-x-3'>
                             <FaMapMarkerAlt className='text-3xl text-darkorange' />
                             <div>
-                                <h4 className='text-sm'>Destination</h4>
-                                <p className='text-lg font-medium'>{internationalpackage.destination}</p>
+                                <h4 className='text-sm'>Place</h4>
+                                <p className='text-lg font-medium'>{internationalpackage.description}</p>
                             </div>
                         </div>
 

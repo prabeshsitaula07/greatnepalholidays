@@ -142,10 +142,10 @@ app.post('/api/add-internationalpackage', (req: Request, res: Response) => {
   const { internationalpackage, destination, price, country, duration, image_url, description } = req.body;
 
   // Type assertion to ensure price is a number (since it comes as a string in the request body)
-  const query = `INSERT INTO internationalpackages (package_name, destination, price, country, duration, image_url, description)
+  const query = `INSERT INTO internationalpackages (package_name, place, price, country, duration, image_url, description)
                  VALUES (?, ?, ?, ?, ?, ?, ?)`;
 
-  db.query(query, [internationalpackage, destination, parseFloat(price), country, duration, image_url, description], (err, result: mysql.ResultSetHeader) => {
+  db.query(query, [internationalpackage, place, parseFloat(price), country, duration, image_url, description], (err, result: mysql.ResultSetHeader) => {
     if (err) {
       return res.status(500).json({ error: 'Failed to add activity' });
     }
