@@ -139,13 +139,13 @@ app.get('/api/nepalpackage/:id', (req: Request, res: Response) => {
 
 // Add International Package (POST endpoint)
 app.post('/api/add-internationalpackage', (req: Request, res: Response) => {
-  const { package_name, place, price, country, duration, image_url, description } = req.body;
+  const { package_name, place, price, country, duration, imageurl, description } = req.body;
 
   // Type assertion to ensure price is a number (since it comes as a string in the request body)
-  const query = `INSERT INTO activity (package_name, place, price, country, duration, image_url, description)
+  const query = `INSERT INTO activity (package_name, place, price, country, duration, imageurl, description)
                  VALUES (?, ?, ?, ?, ?, ?, ?)`;
 
-  db.query(query, [package_name, place, parseFloat(price), country, duration, image_url, description], (err, result: mysql.ResultSetHeader) => {
+  db.query(query, [package_name, place, parseFloat(price), country, duration, imageurl, description], (err, result: mysql.ResultSetHeader) => {
     if (err) {
       return res.status(500).json({ error: 'Failed to add activity' });
     }

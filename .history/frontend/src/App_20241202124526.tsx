@@ -10,7 +10,7 @@ import NepalPackage from './components/Package/NepalPackage';
 import InternationalPackage from './components/Package/InternationalPackage';
 import InternationalPackageDetail from './components/Package/InternationalPackageDetail';
 import Error from './components/ErrorPage/Error';
-import AddInternationalPackage from './components/Package/AddInternationalPackages';
+import AddInternationalPackages from './components/Package/AddInternationalPackages';
 
 export default function App() {
   return (
