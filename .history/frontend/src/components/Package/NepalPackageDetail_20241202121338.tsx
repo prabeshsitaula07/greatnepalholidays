@@ -9,9 +9,9 @@ import { FaMapMarkerAlt, FaDollarSign, FaFlag, FaClock } from 'react-icons/fa';
 import emailjs from '@emailjs/browser';
 
 // Define the type for the activity object
-interface Activity {
+interface NepalPackage {
     id: number;
-    activity: string;
+    package_name: string;
     place: string;
     price: number;
     country: string;
@@ -20,7 +20,7 @@ interface Activity {
     duration: string;
 }
 
-const ActivityDetails = () => {
+const NepalPackageDetail = () => {
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [pnumber, setPnumber] = useState('');
@@ -56,14 +56,14 @@ const ActivityDetails = () => {
 
     // Define the type for the params to ensure type safety
     const { id } = useParams<{ id: string }>();
-    const [activity, setActivity] = useState<Activity | null>(null);
+    const [nepalpackage, setNepalPackage] = useState<NepalPackage | null>(null);
 
     useEffect(() => {
         // Fetch activity details from the backend
         if (id) {
-            axios.get<Activity>(`http://localhost:5000/api/activity/${id}`)
+            axios.get<NepalPackage>(`http://localhost:5000/api/nepalpackage/${id}`)
                 .then(response => {
-                    setActivity(response.data);
+                    setNepalPackage(response.data);
                 })
                 .catch(error => {
                     console.error('Error fetching activity details:', error);
@@ -71,7 +71,7 @@ const ActivityDetails = () => {
         }
     }, [id]);
 
-    if (!activity) {
+    if (!nepalpackage) {
         return <div>Loading...</div>;
     }
 
@@ -79,22 +79,22 @@ const ActivityDetails = () => {
         <div>
             <div className='relative'>
                 <img
-                    src={activity.imageurl}
-                    alt={activity.activity}
+                    src={nepalpackage.imageurl}
+                    alt={nepalpackage.package_name}
                     className="w-screen max-h-[400px] object-cover"
                 />
                 <div className="absolute inset-0 bg-black bg-opacity-40"></div>
                 <div className='absolute bottom-10 text-white px-5 md:px-24'>
-                <h1 className='text-xl md:text-5xl font-extrabold'>{activity.activity}</h1>
+                <h1 className='md:text-5xl font-extrabold'>{nepalpackage.package_name}</h1>
                 <div className='flex items-center gap-2 pt-2 pb-10'>
-                    <Link to='/activities' className='hover:text-darkorange duration-300 transition'>Activities</Link>
+                    <Link to='/nepalpackages' className='hover:text-darkorange duration-300 transition'>Nepal Packages</Link>
                     <FontAwesomeIcon icon={faChevronRight} />
-                    {activity.activity}
+                    {nepalpackage.package_name}
                     </div>
                 </div>
             </div>
             <div className="container mx-auto p-5 px-5 py-10 md:px-24">
-                <h1 className="text-3xl font-bold text-center mb-5 uppercase font-parkinsans">{activity.activity}</h1>
+                <h1 className="text-3xl font-bold mb-5 uppercase">{nepalpackage.package_name}</h1>
                 <div className='bg-primary text-black p-4 rounded-lg shadow-sm'>
                     <h2 className='font-semibold text-xl mb-4 font-fira'>Trip Information</h2>
 
@@ -102,32 +102,32 @@ const ActivityDetails = () => {
                         <div className='flex items-center space-x-3'>
                             <FaMapMarkerAlt className='text-3xl text-darkorange' />
                             <div>
-                                <h4 className='text-sm'>Place</h4>
-                                <p className='text-lg font-medium'>{activity.place}</p>
+                                <h4 className='text-lg font-medium'>Place</h4>
+                                <p className='text-sm'>{nepalpackage.place}</p>
                             </div>
                         </div>
 
                         <div className='flex items-center space-x-3'>
                             <FaDollarSign className='text-3xl text-darkorange' />
                             <div>
-                                <h4 className='text-sm'>Price</h4>
-                                <p className='text-lg font-medium'>${activity.price}</p>
+                                <h4 className='text-lg font-medium'>Price</h4>
+                                <p className='text-sm'>${nepalpackage.price}</p>
                             </div>
                         </div>
 
                         <div className='flex items-center space-x-3'>
                             <FaFlag className='text-3xl text-darkorange' />
                             <div>
-                                <h4 className='text-sm'>Country</h4>
-                                <p className='text-lg font-medium'>{activity.country}</p>
+                                <h4 className='text-lg font-medium'>Country</h4>
+                                <p className='text-sm'>{nepalpackage.country}</p>
                             </div>
                         </div>
 
                         <div className='flex items-center space-x-3'>
                             <FaClock className='text-3xl text-darkorange' />
                             <div>
-                                <h4 className='text-md'>Duration</h4>
-                                <p className='text-lg font-medium'>{activity.duration}</p>
+                                <h4 className='text-lg font-medium'>Duration</h4>
+                                <p className='text-sm'>{nepalpackage.duration}</p>
                             </div>
                         </div>
                     </div>
@@ -138,7 +138,7 @@ const ActivityDetails = () => {
                     {/* Render description with HTML content */}
                     <div
                         className="mt-4 border p-4 w-full md:w-1/2 lg:w-[80%]"
-                        dangerouslySetInnerHTML={{ __html: activity.description }}
+                        dangerouslySetInnerHTML={{ __html: nepalpackage.description }}
                     />
 
                     <div className='md:w-1/2 lg:w-[20%] w-full pt-4'>
@@ -184,4 +184,4 @@ const ActivityDetails = () => {
     );
 };
 
-export default ActivityDetails;
+export default NepalPackageDetail;
