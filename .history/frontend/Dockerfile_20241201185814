@@ -1,0 +1,19 @@
+# Use the official Node.js image as the base image
+FROM node:18
+
+# Set the working directory
+WORKDIR /app
+
+# Copy package.json and install dependencies
+COPY package.json package-lock.json ./
+RUN npm install
+
+# Copy the rest of the frontend code
+COPY . .
+
+# Serve the build using a lightweight web server
+RUN npm install -g serve
+CMD ["serve", "-s", "dist", "-l", "3000"]
+
+# Expose the port
+EXPOSE 5173
