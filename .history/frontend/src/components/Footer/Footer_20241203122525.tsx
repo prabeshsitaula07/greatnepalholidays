@@ -50,16 +50,10 @@ export default function Footer() {
         >
             <div className="container px-5 py-24 lg:px-24 mx-auto flex md:items-center lg:items-start md:flex-row md:flex-nowrap flex-wrap flex-col">
                 <div className="w-64 flex gap-4 md:mx-0 mx-auto text-center md:text-left md:mt-0 mt-10">
-                    <Link
-                        to="/"
-                        onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-                    >
+                    <Link to='/'>
                         <img src={logo1} alt="" className="h-24" />
                     </Link>
-                    <Link
-                        to="/"
-                        onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-                    >
+                    <Link to='/'>
                         <img src={logo2} alt="" className="h-24" />
                     </Link>
                 </div>
@@ -68,127 +62,55 @@ export default function Footer() {
                         <h2 className="title-font font-medium text-white tracking-widest text-sm mb-3">Quick Links</h2>
                         <nav className="list-none mb-10">
                             <li>
-                                <Link
-                                    to="/"
-                                    onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-                                    className="text-white hover:text-primary font-light"
-                                >
-                                    Home
-                                </Link>
+                                <Link to='/' className="text-white hover:text-primary font-light">Home</Link>
                             </li>
                             <li>
-                                <Link
-                                    to="/services"
-                                    onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-                                    className="text-white hover:text-primary font-light"
-                                >
-                                    Services
-                                </Link>
+                                <Link to='/services' className="text-white hover:text-primary font-light">Services</Link>
                             </li>
                             <li>
-                                <Link
-                                    to="/contact"
-                                    onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-                                    className="text-white hover:text-primary font-light"
-                                >
-                                    Contact
-                                </Link>
+                                <Link to='/contact' className="text-white hover:text-primary font-light">Contact</Link>
                             </li>
                             <li>
-                                <Link
-                                    to="/about/gallery"
-                                    onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-                                    className="text-white hover:text-primary font-light"
-                                >
-                                    Gallery
-                                </Link>
+                                <Link to='/about/gallery' className="text-white hover:text-primary font-light">Gallery</Link>
                             </li>
                             <li>
-                                <Link
-                                    to="/about/team"
-                                    onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-                                    className="text-white hover:text-primary font-light"
-                                >
-                                    Team Members
-                                </Link>
+                                <Link to='/about/team' className="text-white hover:text-primary font-light">Team Members</Link>
                             </li>
                         </nav>
                     </div>
                     <div className="lg:w-1/4 md:w-1/2 w-full px-4">
-                        <h2 className="title-font font-medium text-white tracking-widest text-sm mb-3">
-                            <Link to="/activities" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
-                                ACTIVITIES
-                            </Link>
-                        </h2>
+                        <h2 className="title-font font-medium text-white tracking-widest text-sm mb-3"><Link to='/activities'>ACTIVITIES</Link></h2>
                         <nav className="list-none mb-10">
                             {activities.map((activity) => (
-                                <li
-                                    key={activity.id}
-                                    className="text-white hover:text-primary whitespace-nowrap font-light"
-                                >
-                                    <Link
-                                        to={`/activity/${activity.id}`}
-                                        onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-                                    >
-                                        {activity.activity}
-                                    </Link>
+                                <li key={activity.id} className="text-white hover:text-primary whitespace-nowrap font-light">
+                                    <Link to={`/activity/${activity.id}`}>{activity.activity}</Link>
                                 </li>
                             ))}
                         </nav>
                     </div>
+
                     <div className="lg:w-1/4 md:w-1/2 w-full px-4">
-                        <h2 className="title-font font-medium text-white tracking-widest text-sm mb-3">
-                            <Link
-                                to="/internationalpackages"
-                                onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-                            >
-                                INTERNATIONAL PACKAGES
-                            </Link>
-                        </h2>
+                        <h2 className="title-font font-medium text-white tracking-widest text-sm mb-3"><Link to='/internationalpackages'>INTERNATIONAL PACKAGES</Link></h2>
                         <nav className="list-none mb-10">
                             {internationalpackages.map((internationalpackage) => (
-                                <li
-                                    key={internationalpackage.id}
-                                    className="text-white hover:text-primary whitespace-nowrap font-light"
-                                >
-                                    <Link
-                                        to={`/internationalpackage/${internationalpackage.id}`}
-                                        onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-                                    >
-                                        {internationalpackage.package_name}
-                                    </Link>
+                                <li key={internationalpackage.id} className="text-white hover:text-primary whitespace-nowrap font-light">
+                                    <Link to={`/internationalpackage/${internationalpackage.id}`}>{internationalpackage.package_name}</Link>
                                 </li>
                             ))}
                         </nav>
                     </div>
                     <div className="lg:w-1/4 md:w-1/2 w-full px-4">
-                        <h2 className="title-font font-medium text-white tracking-widest text-sm mb-3">
-                            <Link
-                                to="/nepalpackages"
-                                onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-                            >
-                                NEPAL PACKAGES
-                            </Link>
-                        </h2>
+                        <h2 className="title-font font-medium text-white tracking-widest text-sm mb-3"><Link to='/nepalpackages'>NEPAL PACKAGES</Link></h2>
                         <nav className="list-none mb-10">
                             {nepalpackages.map((nepalpackage) => (
-                                <li
-                                    key={nepalpackage.id}
-                                    className="text-white hover:text-primary whitespace-nowrap font-light"
-                                >
-                                    <Link
-                                        to={`/nepalpackage/${nepalpackage.id}`}
-                                        onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-                                    >
-                                        {nepalpackage.package_name}
-                                    </Link>
+                                <li key={nepalpackage.id} className="text-white hover:text-primary whitespace-nowrap font-light">
+                                    <Link to={`/nepalpackage/${nepalpackage.id}`}>{nepalpackage.package_name}</Link>
                                 </li>
                             ))}
                         </nav>
                     </div>
                 </div>
             </div>
-
             <div className="bg-gray-100">
                 <div className="container mx-auto py-4 px-5 md:px-24 flex flex-wrap flex-col sm:flex-row">
                     <p className="text-gray-500 text-sm text-center sm:text-left font-bold">© 2024 Great Nepal Holidays —
