@@ -114,13 +114,6 @@ export default function Navbar() {
         };
     }, [showChecklist]);
 
-    // responsive nav
-    const [isMenuOpen, setIsMenuOpen] = useState(false); // State for menu visibility
-
-    const toggleMenu = () => {
-      setIsMenuOpen(!isMenuOpen);
-    };
-
     return (
         <>
             <div className='w-full bg-darktheme md:gap-10 md:flex px-5 py-2 lg:px-24 font-parkinsans'>
@@ -135,7 +128,7 @@ export default function Navbar() {
             <header
                 className={`text-black body-font w-full z-20 transition-all duration-300 ${isScrolled ? 'fixed top-0 bg-primary shadow-md' : 'bg-[#2f3c5ae8] text-white'}`}
             >
-                <div className="w-full mx-auto container flex flex-wrap p-5 lg:px-24 justify-between items-center">
+                <div className="w-full mx-auto flex flex-wrap p-5 lg:px-24 justify-between items-center">
                     <div className="flex title-font font-medium items-center mb-4 md:mb-0 gap-10">
                         <Link to='/'>
                             <img src={logo1} alt="" className='h-14 w-auto' />
@@ -244,148 +237,107 @@ export default function Navbar() {
                     </nav>
 
                     {/* responsive nav */}
-                    <nav className="lg:hidden">
-      {/* Hamburger or Close Icon */}
-      <div onClick={toggleMenu} className="cursor-pointer">
-        {isMenuOpen ? <FiX size={30} /> : <FiMenu size={30} />}
-      </div>
+                    <nav className='lg:hidden'>
+                        <FiMenu size={30} />
+                        {/* <FiX size={30} />   */}
+                        <div className='bg-primary text-black absolute w-full left-0 top-full px-5 md:px-24 flex flex-col gap-2 py-4'>
+                            <Link to='' className="mr-5 hover:text-darkorange block">Home</Link>
+                            <Link to='' className="mr-5 hover:text-darkorange block">About Us</Link>
+                            <Link to='' className="mr-5 hover:text-darkorange block">Services</Link>
 
-      {/* Dropdown Menu */}
-      {isMenuOpen && (
-        <div className="bg-primary text-black absolute w-full left-0 z-30 px-5 lg:px-24 flex flex-col gap-2 py-4 mt-4">
-          <Link to="" className="mr-5 hover:text-darkorange block">Home</Link>
-          <Link to="" className="mr-5 hover:text-darkorange block">About Us</Link>
-          <Link to="" className="mr-5 hover:text-darkorange block">Services</Link>
+                            {/* Activities Dropdown */}
+                            <div
+                                className="relative mr-5"
+                                onMouseEnter={() => handleMouseEnter('activities')}
+                                onMouseLeave={() => handleMouseLeave('activities')}
+                            >
+                                <Link to="/activities" className="hover:text-darkorange block">
+                                    Activities <FontAwesomeIcon icon={faChevronDown} className="hover:text-darkorange" />
+                                </Link>
+                                {dropdownVisibility.activities && (
+                                    <div
+                                        className="absolute left-0 top-full z-30 animate-fadeIn"
+                                        onMouseEnter={() => handleListMouseEnter('activities')}
+                                        onMouseLeave={() => handleListMouseLeave('activities')}
+                                    >
+                                        <div className='bg-primary text-black shadow-md p-4 z-30 mt-2 lg:mt-9 whitespace-nowrap w-fit'>
+                                            <ul>
+                                                {activities.map((activity) => (
+                                                    <li key={activity.id} className="hover:text-darkorange py-2 font-light">
+                                                        <Link to={`/activity/${activity.id}`}>{activity.activity}</Link>
+                                                    </li>
+                                                ))}
+                                            </ul>
+                                        </div>
+                                    </div>
+                                )}
+                            </div>
 
-          {/* Activities Dropdown */}
-          <div
-            className="relative mr-5"
-            onMouseEnter={() => handleMouseEnter("activities")}
-            onMouseLeave={() => handleMouseLeave("activities")}
-          >
-            <Link to="/activities" className="hover:text-darkorange block">
-              Activities{" "}
-              <FontAwesomeIcon
-                icon={faChevronDown}
-                className="hover:text-darkorange"
-              />
-            </Link>
-            {dropdownVisibility.activities && (
-              <div
-                className="absolute left-0 top-full z-30 animate-fadeIn"
-                onMouseEnter={() => handleListMouseEnter("activities")}
-                onMouseLeave={() => handleListMouseLeave("activities")}
-              >
-                <div className="bg-primary text-black shadow-md p-4 z-30 mt-2 lg:mt-9 whitespace-nowrap w-fit">
-                  <ul>
-                    {activities.map((activity) => (
-                      <li
-                        key={activity.id}
-                        className="hover:text-darkorange py-2 font-light"
-                      >
-                        <Link to={`/activity/${activity.id}`}>
-                          {activity.activity}
-                        </Link>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
-            )}
-          </div>
+                            {/* International Packages Dropdown */}
+                            <div
+                                className="relative mr-5"
+                                onMouseEnter={() => handleMouseEnter('international')}
+                                onMouseLeave={() => handleMouseLeave('international')}
+                            >
+                                <Link to="/internationalpackages" className="hover:text-darkorange">
+                                    International Packages <FontAwesomeIcon icon={faChevronDown} className="hover:text-darkorange" />
+                                </Link>
+                                {dropdownVisibility.international && (
+                                    <div
+                                        className="absolute left-0 top-full z-30 animate-fadeIn"
+                                        onMouseEnter={() => handleListMouseEnter('international')}
+                                        onMouseLeave={() => handleListMouseLeave('international')}
+                                    >
+                                        <div className='bg-primary text-black shadow-md p-4 z-30 mt-2 lg:mt-9 whitespace-nowrap w-fit'>
+                                            <ul>
+                                                {internationalpackages.map((internationalpackage) => (
+                                                    <li key={internationalpackage.id} className="hover:text-darkorange py-2 font-light">
+                                                        <Link to={`/internationalpackage/${internationalpackage.id}`}>{internationalpackage.package_name}</Link>
+                                                    </li>
+                                                ))}
+                                            </ul>
+                                        </div>
+                                    </div>
+                                )}
+                            </div>
 
-          {/* International Packages Dropdown */}
-          <div
-            className="relative mr-5"
-            onMouseEnter={() => handleMouseEnter("international")}
-            onMouseLeave={() => handleMouseLeave("international")}
-          >
-            <Link
-              to="/internationalpackages"
-              className="hover:text-darkorange"
-            >
-              International Packages{" "}
-              <FontAwesomeIcon
-                icon={faChevronDown}
-                className="hover:text-darkorange"
-              />
-            </Link>
-            {dropdownVisibility.international && (
-              <div
-                className="absolute left-0 top-full z-30 animate-fadeIn"
-                onMouseEnter={() => handleListMouseEnter("international")}
-                onMouseLeave={() => handleListMouseLeave("international")}
-              >
-                <div className="bg-primary text-black shadow-md p-4 z-30 mt-2 lg:mt-9 whitespace-nowrap w-fit">
-                  <ul>
-                    {internationalpackages.map((internationalpackage) => (
-                      <li
-                        key={internationalpackage.id}
-                        className="hover:text-darkorange py-2 font-light"
-                      >
-                        <Link
-                          to={`/internationalpackage/${internationalpackage.id}`}
-                        >
-                          {internationalpackage.package_name}
-                        </Link>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
-            )}
-          </div>
+                            {/* Nepal Packages Dropdown */}
+                            <div
+                                className="relative mr-5"
+                                onMouseEnter={() => handleMouseEnter('nepal')}
+                                onMouseLeave={() => handleMouseLeave('nepal')}
+                            >
+                                <Link to="/nepalpackages" className="hover:text-darkorange">
+                                    Nepal Packages <FontAwesomeIcon icon={faChevronDown} className="hover:text-darkorange" />
+                                </Link>
+                                {dropdownVisibility.nepal && (
+                                    <div
+                                        className="absolute left-0 top-full z-30 animate-fadeIn"
+                                        onMouseEnter={() => handleListMouseEnter('nepal')}
+                                        onMouseLeave={() => handleListMouseLeave('nepal')}
+                                    >
+                                        <div className='bg-primary text-black shadow-md p-4 z-30 mt-2 lg:mt-9 whitespace-nowrap w-fit'>
+                                            <ul>
+                                                {nepalpackages.map((nepalpackage) => (
+                                                    <li key={nepalpackage.id} className="hover:text-darkorange py-2 font-light">
+                                                        <Link to={`/nepalpackage/${nepalpackage.id}`}>{nepalpackage.package_name}</Link>
+                                                    </li>
+                                                ))}
+                                            </ul>
+                                        </div>
+                                    </div>
+                                )}
+                            </div>
 
-          {/* Nepal Packages Dropdown */}
-          <div
-            className="relative mr-5"
-            onMouseEnter={() => handleMouseEnter("nepal")}
-            onMouseLeave={() => handleMouseLeave("nepal")}
-          >
-            <Link to="/nepalpackages" className="hover:text-darkorange">
-              Nepal Packages{" "}
-              <FontAwesomeIcon
-                icon={faChevronDown}
-                className="hover:text-darkorange"
-              />
-            </Link>
-            {dropdownVisibility.nepal && (
-              <div
-                className="absolute left-0 top-full z-30 animate-fadeIn"
-                onMouseEnter={() => handleListMouseEnter("nepal")}
-                onMouseLeave={() => handleListMouseLeave("nepal")}
-              >
-                <div className="bg-primary text-black shadow-md p-4 z-30 mt-2 lg:mt-9 whitespace-nowrap w-fit">
-                  <ul>
-                    {nepalpackages.map((nepalpackage) => (
-                      <li
-                        key={nepalpackage.id}
-                        className="hover:text-darkorange py-2 font-light"
-                      >
-                        <Link to={`/nepalpackage/${nepalpackage.id}`}>
-                          {nepalpackage.package_name}
-                        </Link>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
-            )}
-          </div>
-
-          <Link to="" className="mr-5 hover:text-darkorange block">
-            Blogs
-          </Link>
-          <button
-            className="inline-flex items-center text-primary bg-darkorange border border-darkorange py-1 px-3 focus:outline-none hover:bg-primary text-lg hover:text-darkorange rounded mt-4 md:mt-0 w-fit"
-            onClick={handleButtonClick} // Add onClick handler
-          >
-            Download Visa CheckList
-          </button>
-        </div>
-      )}
-    </nav>
-
+                            <Link to='' className="mr-5 hover:text-darkorange block">Blogs</Link>
+                            <button
+                                className="inline-flex items-center text-primary bg-darkorange border border-darkorange py-1 px-3 focus:outline-none hover:bg-primary text-lg hover:text-darkorange rounded mt-4 md:mt-0 w-fit"
+                                onClick={handleButtonClick} // Add onClick handler
+                            >
+                                Download Visa CheckList
+                            </button>
+                        </div>
+                    </nav>
                 </div>
 
             </header>

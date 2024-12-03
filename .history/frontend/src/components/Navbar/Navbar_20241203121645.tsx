@@ -135,7 +135,7 @@ export default function Navbar() {
             <header
                 className={`text-black body-font w-full z-20 transition-all duration-300 ${isScrolled ? 'fixed top-0 bg-primary shadow-md' : 'bg-[#2f3c5ae8] text-white'}`}
             >
-                <div className="w-full mx-auto container flex flex-wrap p-5 lg:px-24 justify-between items-center">
+                <div className="w-full mx-auto  flex flex-wrap p-5 lg:px-24 justify-between items-center">
                     <div className="flex title-font font-medium items-center mb-4 md:mb-0 gap-10">
                         <Link to='/'>
                             <img src={logo1} alt="" className='h-14 w-auto' />

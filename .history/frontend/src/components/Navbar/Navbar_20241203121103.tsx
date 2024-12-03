@@ -135,7 +135,7 @@ export default function Navbar() {
             <header
                 className={`text-black body-font w-full z-20 transition-all duration-300 ${isScrolled ? 'fixed top-0 bg-primary shadow-md' : 'bg-[#2f3c5ae8] text-white'}`}
             >
-                <div className="w-full mx-auto container flex flex-wrap p-5 lg:px-24 justify-between items-center">
+                <div className="w-full mx-auto flex flex-wrap p-5 lg:px-24 justify-between items-center">
                     <div className="flex title-font font-medium items-center mb-4 md:mb-0 gap-10">
                         <Link to='/'>
                             <img src={logo1} alt="" className='h-14 w-auto' />
@@ -252,7 +252,7 @@ export default function Navbar() {
 
       {/* Dropdown Menu */}
       {isMenuOpen && (
-        <div className="bg-primary text-black absolute w-full left-0 z-30 px-5 lg:px-24 flex flex-col gap-2 py-4 mt-4">
+        <div className="bg-primary text-black absolute w-full left-0 z-30 px-5 md:px-24 flex flex-col gap-2 py-4 top-8">
           <Link to="" className="mr-5 hover:text-darkorange block">Home</Link>
           <Link to="" className="mr-5 hover:text-darkorange block">About Us</Link>
           <Link to="" className="mr-5 hover:text-darkorange block">Services</Link>

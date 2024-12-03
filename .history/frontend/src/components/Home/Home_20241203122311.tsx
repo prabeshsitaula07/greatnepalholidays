@@ -133,7 +133,7 @@ export default function Home() {
             </h4>
           </div>
           <Link to='/activities'>
-            <button className="inline-flex items-center text-primary bg-darkorange border px-4 py-0 border-darkorange focus:outline-none hover:bg-primary text-lg hover:text-darkorange rounded-3xl h-10 md:mt-0 transition duration-300 my-2">
+            <button className="inline-flex items-center text-primary bg-darkorange border px-4 py-0 border-darkorange focus:outline-none hover:bg-primary text-lg hover:text-darkorange rounded-3xl h-10 md:mt-0 transition duration-300">
               See All Packages
               <FaArrowRight className="ml-2 text-lg" />
             </button>

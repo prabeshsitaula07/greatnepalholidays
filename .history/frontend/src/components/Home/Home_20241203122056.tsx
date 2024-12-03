@@ -123,9 +123,9 @@ export default function Home() {
       {/* Activities */}
 
       <section className="text-gray-600 body-font">
-        <div className="md:flex justify-between items-center px-5 py-10 md:px-24">
+        <div className="flex justify-between items-center px-5 py-10 md:px-24">
           <div>
-            <h2 className="text-2xl md:text-4xl tracking-tight font-extrabold text-gray-900 dark:text-black">
+            <h2 className="text-4xl tracking-tight font-extrabold text-gray-900 dark:text-black">
               Nepal Best Seller Trips
             </h2>
             <h4 className="text-lg text-orange-400 font-semibold mt-2">
@@ -133,7 +133,7 @@ export default function Home() {
             </h4>
           </div>
           <Link to='/activities'>
-            <button className="inline-flex items-center text-primary bg-darkorange border px-4 py-0 border-darkorange focus:outline-none hover:bg-primary text-lg hover:text-darkorange rounded-3xl h-10 md:mt-0 transition duration-300 my-2">
+            <button className="inline-flex items-center text-primary bg-darkorange border px-4 py-0 border-darkorange focus:outline-none hover:bg-primary text-lg hover:text-darkorange rounded-3xl h-10 md:mt-0 transition duration-300">
               See All Packages
               <FaArrowRight className="ml-2 text-lg" />
             </button>
@@ -175,9 +175,9 @@ export default function Home() {
 
       <div className='bg-primary'>
         <section className="text-gray-600 body-font">
-          <div className="md:flex justify-between items-center px-5 py-10 md:px-24">
+          <div className="flex justify-between items-center px-5 py-10 md:px-24">
             <div>
-              <h2 className="text-2xl md:text-4xl tracking-tight font-extrabold text-gray-900 dark:text-black">
+              <h2 className="text-4xl tracking-tight font-extrabold text-gray-900 dark:text-black">
                 Popular International Packages
               </h2>
               <h4 className="text-lg text-orange-400 font-semibold mt-2">
@@ -185,7 +185,7 @@ export default function Home() {
               </h4>
             </div>
             <Link to='/internationalpackages'>
-              <button className="inline-flex items-center text-primary bg-darkorange border px-4 py-0 border-darkorange focus:outline-none hover:bg-primary text-lg hover:text-darkorange rounded-3xl h-10 md:mt-0 transition duration-300 my-2">
+              <button className="inline-flex items-center text-primary bg-darkorange border px-4 py-0 border-darkorange focus:outline-none hover:bg-primary text-lg hover:text-darkorange rounded-3xl h-10 md:mt-0 transition duration-300">
                 See All Packages
                 <FaArrowRight className="ml-2 text-lg" />
               </button>
