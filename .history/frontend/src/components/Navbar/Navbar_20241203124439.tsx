@@ -156,7 +156,7 @@ export default function Navbar() {
                             onMouseEnter={() => handleMouseEnter('activities')}
                             onMouseLeave={() => handleMouseLeave('activities')}
                         >
-                            <Link to="/activities" className="hover:text-darkorange" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
+                            <Link to="/activities" className="hover:text-darkorange" >
                                 Activities <FontAwesomeIcon icon={faChevronDown} className="hover:text-darkorange" />
                             </Link>
                             {dropdownVisibility.activities && (
@@ -169,7 +169,7 @@ export default function Navbar() {
                                         <ul>
                                             {activities.map((activity) => (
                                                 <li key={activity.id} className="hover:text-darkorange py-2 font-light">
-                                                    <Link to={`/activity/${activity.id}`} onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>{activity.activity}</Link>
+                                                    <Link to={`/activity/${activity.id}`}>{activity.activity}</Link>
                                                 </li>
                                             ))}
                                         </ul>
@@ -184,7 +184,7 @@ export default function Navbar() {
                             onMouseEnter={() => handleMouseEnter('international')}
                             onMouseLeave={() => handleMouseLeave('international')}
                         >
-                            <Link to="/internationalpackages" className="hover:text-darkorange" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
+                            <Link to="/internationalpackages" className="hover:text-darkorange">
                                 International Packages <FontAwesomeIcon icon={faChevronDown} className="hover:text-darkorange" />
                             </Link>
                             {dropdownVisibility.international && (
@@ -197,7 +197,7 @@ export default function Navbar() {
                                         <ul>
                                             {internationalpackages.map((internationalpackage) => (
                                                 <li key={internationalpackage.id} className="hover:text-darkorange py-2 font-light">
-                                                    <Link to={`/internationalpackage/${internationalpackage.id}`} onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>{internationalpackage.package_name}</Link>
+                                                    <Link to={`/internationalpackage/${internationalpackage.id}`}>{internationalpackage.package_name}</Link>
                                                 </li>
                                             ))}
                                         </ul>
@@ -212,7 +212,7 @@ export default function Navbar() {
                             onMouseEnter={() => handleMouseEnter('nepal')}
                             onMouseLeave={() => handleMouseLeave('nepal')}
                         >
-                            <Link to="/nepalpackages" className="hover:text-darkorange" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
+                            <Link to="/nepalpackages" className="hover:text-darkorange">
                                 Nepal Packages <FontAwesomeIcon icon={faChevronDown} className="hover:text-darkorange" />
                             </Link>
                             {dropdownVisibility.nepal && (
@@ -225,7 +225,7 @@ export default function Navbar() {
                                         <ul>
                                             {nepalpackages.map((nepalpackage) => (
                                                 <li key={nepalpackage.id} className="hover:text-darkorange py-2 font-light">
-                                                    <Link to={`/nepalpackage/${nepalpackage.id}`} onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>{nepalpackage.package_name}</Link>
+                                                    <Link to={`/nepalpackage/${nepalpackage.id}`}>{nepalpackage.package_name}</Link>
                                                 </li>
                                             ))}
                                         </ul>
@@ -253,9 +253,9 @@ export default function Navbar() {
       {/* Dropdown Menu */}
       {isMenuOpen && (
         <div className="bg-primary text-black absolute w-full left-0 z-30 px-5 lg:px-24 flex flex-col gap-2 py-4 mt-4">
-          <Link to="" className="mr-5 hover:text-darkorange block" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>Home</Link>
-          <Link to="" className="mr-5 hover:text-darkorange block" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>About Us</Link>
-          <Link to="" className="mr-5 hover:text-darkorange block" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>Services</Link>
+          <Link to="" className="mr-5 hover:text-darkorange block">Home</Link>
+          <Link to="" className="mr-5 hover:text-darkorange block">About Us</Link>
+          <Link to="" className="mr-5 hover:text-darkorange block">Services</Link>
 
           {/* Activities Dropdown */}
           <div
@@ -283,7 +283,7 @@ export default function Navbar() {
                         key={activity.id}
                         className="hover:text-darkorange py-2 font-light"
                       >
-                        <Link to={`/activity/${activity.id}`} onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
+                        <Link to={`/activity/${activity.id}`}>
                           {activity.activity}
                         </Link>
                       </li>
@@ -324,7 +324,7 @@ export default function Navbar() {
                         className="hover:text-darkorange py-2 font-light"
                       >
                         <Link
-                          to={`/internationalpackage/${internationalpackage.id}`} onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+                          to={`/internationalpackage/${internationalpackage.id}`}
                         >
                           {internationalpackage.package_name}
                         </Link>
@@ -362,7 +362,7 @@ export default function Navbar() {
                         key={nepalpackage.id}
                         className="hover:text-darkorange py-2 font-light"
                       >
-                        <Link to={`/nepalpackage/${nepalpackage.id}`} onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
+                        <Link to={`/nepalpackage/${nepalpackage.id}`}>
                           {nepalpackage.package_name}
                         </Link>
                       </li>

@@ -212,7 +212,7 @@ export default function Navbar() {
                             onMouseEnter={() => handleMouseEnter('nepal')}
                             onMouseLeave={() => handleMouseLeave('nepal')}
                         >
-                            <Link to="/nepalpackages" className="hover:text-darkorange" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
+                            <Link to="/nepalpackages" className="hover:text-darkorange">
                                 Nepal Packages <FontAwesomeIcon icon={faChevronDown} className="hover:text-darkorange" />
                             </Link>
                             {dropdownVisibility.nepal && (

@@ -156,7 +156,7 @@ export default function Navbar() {
                             onMouseEnter={() => handleMouseEnter('activities')}
                             onMouseLeave={() => handleMouseLeave('activities')}
                         >
-                            <Link to="/activities" className="hover:text-darkorange" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
+                            <Link to="/activities" className="hover:text-darkorange">
                                 Activities <FontAwesomeIcon icon={faChevronDown} className="hover:text-darkorange" />
                             </Link>
                             {dropdownVisibility.activities && (
@@ -184,7 +184,7 @@ export default function Navbar() {
                             onMouseEnter={() => handleMouseEnter('international')}
                             onMouseLeave={() => handleMouseLeave('international')}
                         >
-                            <Link to="/internationalpackages" className="hover:text-darkorange" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
+                            <Link to="/internationalpackages" className="hover:text-darkorange">
                                 International Packages <FontAwesomeIcon icon={faChevronDown} className="hover:text-darkorange" />
                             </Link>
                             {dropdownVisibility.international && (
@@ -212,7 +212,7 @@ export default function Navbar() {
                             onMouseEnter={() => handleMouseEnter('nepal')}
                             onMouseLeave={() => handleMouseLeave('nepal')}
                         >
-                            <Link to="/nepalpackages" className="hover:text-darkorange" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
+                            <Link to="/nepalpackages" className="hover:text-darkorange">
                                 Nepal Packages <FontAwesomeIcon icon={faChevronDown} className="hover:text-darkorange" />
                             </Link>
                             {dropdownVisibility.nepal && (
