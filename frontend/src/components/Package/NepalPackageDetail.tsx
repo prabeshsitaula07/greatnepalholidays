@@ -86,15 +86,15 @@ const NepalPackageDetail = () => {
                 <div className="absolute inset-0 bg-black bg-opacity-40"></div>
                 <div className='absolute bottom-10 text-white px-5 md:px-24'>
                 <h1 className='text-xl md:text-5xl font-extrabold'>{nepalpackage.package_name}</h1>
-                <div className='flex items-center gap-2 pt-2 pb-10'>
+                <div className='flex items-center gap-2 pt-2 pb-10 whitespace-nowrap'>
                     <Link to='/nepalpackages' className='hover:text-darkorange duration-300 transition'>Nepal Packages</Link>
                     <FontAwesomeIcon icon={faChevronRight} />
                     {nepalpackage.package_name}
                     </div>
                 </div>
             </div>
-            <div className="container mx-auto p-5 px-5 py-10 md:px-24">
-                <h1 className="text-3xl font-bold mb-5 uppercase">{nepalpackage.package_name}</h1>
+            <div className="container mx-auto p-5 px-5 py-10 lg:px-24">
+                <h1 className="text-3xl font-bold mb-5 uppercase font-parkinsans text-center">{nepalpackage.package_name}</h1>
                 <div className='bg-primary text-black p-4 rounded-lg shadow-sm'>
                     <h2 className='font-semibold text-xl mb-4 font-fira'>Trip Information</h2>
 
